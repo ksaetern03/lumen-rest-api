@@ -1,24 +1,13 @@
-# Lumen 5.7 REST API Boilerplate
-
-This is a fork of [github.com/hasib32/rest-api-with-lumen](https://github.com/hasib32/rest-api-with-lumen). 
+# Lumen 5.8 REST API Boilerplate
 
  ## About 
- This is my experiment on upgrading to Lumen 5.7. On top of the [original features](https://github.com/hasib32/rest-api-with-lumen), the followings are added:
 
-- Upgraded to Lumen 5.7
-- Redis
-- Artisan Command for Automatically Generating Resources
-
-Changes:
-- RepositoriesServiceProvider (moved to Repositories/Providers)
-- Refactor Repositories
-- Policies (Unable to get it to work so I removed)
-- Throttle (Removed)
+REST API using Laravel Lumen 5.8
 
  ## Clone Repository
 First, clone the repo:
 ```bash
-$ git clone git@github.com:kaosaetern/lumen-rest-api-boilerplate.git
+$ git clone git@github.com:kaosaetern/lumen-rest-api.git
 ```
 
 #### Laravel Homestead
@@ -29,7 +18,7 @@ It's recommended that you use Laravel Homestead for local development. Follow th
 Go into the new directory and install all the dependencies using Composer. [Get Composer (https://getcomposer.org/)]
 
 ```bash
-$ cd lumen-rest-api-boilerplate
+$ cd lumen-rest-api
 $ composer install
 ```
 
