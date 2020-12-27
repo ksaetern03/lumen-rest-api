@@ -1,8 +1,8 @@
-# Lumen 5.8 REST API Boilerplate
+# Lumen 6.0 REST API Boilerplate
 
  ## About 
 
-REST API using Laravel Lumen 5.8
+REST API using Laravel Lumen 6.0
 
  ## Clone Repository
 First, clone the repo:
@@ -11,7 +11,7 @@ $ git clone git@github.com:kaosaetern/lumen-rest-api.git
 ```
 
 #### Laravel Homestead
-It's recommended that you use Laravel Homestead for local development. Follow the [Installation Guide](https://laravel.com/docs/5.7/homestead#installation-and-setup).
+It's recommended that you use Laravel Homestead for local development. Follow the [Installation Guide](https://laravel.com/docs/6.x/homestead).
 
 #### Install Dependencies
 
@@ -22,11 +22,13 @@ $ cd lumen-rest-api
 $ composer install
 ```
 
-#### Documentation
+#### Configure Environment
 
-I recommend reading through the [original documentation](https://github.com/hasib32/rest-api-with-lumen).
+```bash
+$ cat .env.example > .env
+```
 
-#### Redis
+##### Redis
 
 Add the following to .env.
 ```bash
@@ -39,6 +41,30 @@ REDIS_PORT=6379
 REDIS_DATABASE=0
 REDIS_PASSWORD=null
 ```
+
+#### Connect to Database
+
+```bash
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=database_name
+DB_USERNAME=username
+DB_PASSWORD=password
+```
+
+#### Users API Routes
+| HTTP Method   | Path | Action | Scope | Desciption  |
+| ----- | ----- | ----- | ---- |------------- |
+| GET      | /users | index | users:list | Get all users
+| POST     | /users | store | users:create | Create an user
+| GET      | /users/{user_id} | show | users:read |  Fetch an user by id
+| PUT      | /users/{user_id} | update | users:write | Update an user by id
+| DELETE      | /users/{user_id} | destroy | users:delete | Delete an user by id
+
+Note: ```users/me``` is a special route for getting current authenticated user.
+And for all User routes 'users' scope is available if you want to perform all actions.
+
 
 Create caching keys in controller.
 ```bash
@@ -58,7 +84,7 @@ Flush cache when new models are created.
 Cache::tags('users')->flush();
 ```
 
-#### Artisan Command for Automatically Generating Resources
+## Creating a New Resource
 
 Run the following command to create resource:
 
